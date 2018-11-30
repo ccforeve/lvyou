@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
+import City from './views/City.vue'
 
 Vue.use(Router)
 
@@ -13,6 +14,10 @@ export default new Router({
       name: 'home',
       component: Home
         //component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+    }, {
+      path: '/city',
+      name: 'city',
+      component: City
     }
   ]
 })
