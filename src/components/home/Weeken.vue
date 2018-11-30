@@ -2,13 +2,13 @@
     <div>
         <div class="title">周末去哪</div>
         <ul>
-            <li class="item border-bottom" v-for="item of itemList" :key="item.id">
+            <li class="item border-bottom" v-for="item of list" :key="item.id">
                 <div class="item-img-wrapper">
                     <img class="item-img" :src="item.imgUrl" alt="">
                 </div>
 
                 <div class="item-info">
-                    <p class="item-title">{{item.name}}</p>
+                    <p class="item-title">{{item.title}}</p>
                     <p class="item-desc">{{item.desc}}</p>
                 </div>
             </li>
@@ -19,25 +19,8 @@
 <script>
     export default {
         name: "HomeWeeken",
-        data () {
-            return {
-                itemList: [{
-                    id: '001',
-                    imgUrl: 'http://img1.qunarzz.com/sight/source/1811/b8/5d599bbdcf8b57.jpg_r_640x214_2ee055e3.jpg',
-                    name: '浮在海上的绿洲1',
-                    desc: '南国滨海之城，阳江等你'
-                },{
-                    id: '002',
-                    imgUrl: 'http://img1.qunarzz.com/sight/source/1811/b8/5d599bbdcf8b57.jpg_r_640x214_2ee055e3.jpg',
-                    name: '浮在海上的绿洲2',
-                    desc: '南国滨海之城，阳江等你'
-                },{
-                    id: '003',
-                    imgUrl: 'http://img1.qunarzz.com/sight/source/1811/b8/5d599bbdcf8b57.jpg_r_640x214_2ee055e3.jpg',
-                    name: '浮在海上的绿洲3',
-                    desc: '南国滨海之城，阳江等你'
-                }]
-            }
+        props: {
+            list: Array
         }
     }
 </script>
@@ -53,7 +36,7 @@
     .item-img-wrapper
         overflow hidden
         height 0
-        padding-bottom 33.9%
+        padding-bottom 37.09%
         .item-img
             width 100%
     .item-info

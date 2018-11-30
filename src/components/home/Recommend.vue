@@ -2,7 +2,7 @@
     <div>
         <div class="title">热门推荐</div>
         <ul>
-            <li class="item border-bottom" v-for="item of itemList" :key="item.id">
+            <li class="item border-bottom" v-for="item of list" :key="item.id">
                 <img class="item-img" :src="item.imgUrl" alt="">
                 <div class="item-info">
                     <p class="item-title">{{item.title}}</p>
@@ -17,25 +17,8 @@
 <script>
     export default {
         name: "HomeRecommend",
-        data () {
-            return {
-                itemList: [{
-                    id: '001',
-                    imgUrl: 'http://img1.qunarzz.com/sight/p0/1811/c7/c7cbac2c437f2c3da3.water.jpg_200x200_7911d845.jpg',
-                    title: '深圳欢乐谷1',
-                    desc: '深圳欢乐谷深圳欢乐谷深圳欢乐谷深圳欢乐谷深圳欢乐谷深圳欢乐谷深圳欢乐谷深圳欢乐谷深圳欢乐谷'
-                },{
-                    id: '002',
-                    imgUrl: 'http://img1.qunarzz.com/sight/p0/1811/c7/c7cbac2c437f2c3da3.water.jpg_200x200_7911d845.jpg',
-                    title: '深圳欢乐谷2',
-                    desc: '深圳欢乐谷深圳欢乐谷深圳欢乐谷深圳欢乐谷深圳欢乐谷深圳欢乐谷深圳欢乐谷深圳欢乐谷深圳欢乐谷'
-                },{
-                    id: '003',
-                    imgUrl: 'http://img1.qunarzz.com/sight/p0/1811/c7/c7cbac2c437f2c3da3.water.jpg_200x200_7911d845.jpg',
-                    title: '深圳欢乐谷3',
-                    desc: '深圳欢乐谷深圳欢乐谷深圳欢乐谷深圳欢乐谷深圳欢乐谷深圳欢乐谷深圳欢乐谷深圳欢乐谷深圳欢乐谷'
-                }]
-            }
+        props: {
+            list: Array
         }
     }
 </script>
@@ -45,7 +28,6 @@
 
     .title
         line-height .8rem
-        margin-top .2rem
         background #eee
         text-indent .2rem
     .item
