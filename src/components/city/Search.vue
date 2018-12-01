@@ -5,7 +5,14 @@
         </div>
         <div class="search-content" ref="wrapper" v-show="keyword">
             <ul>
-                <li class="search-item border-bottom" v-for="(item, index) of list" :key="index">{{item.name}}</li>
+                <li
+                    class="search-item border-bottom"
+                    v-for="(item, index) of list"
+                    :key="index"
+                    @click="handleCityChange(item.name)"
+                >
+                    {{item.name}}
+                </li>
                 <li class="search-item border-bottom" v-show="hasNoData">没有找到城市</li>
             </ul>
         </div>
@@ -33,6 +40,12 @@
         computed: {
             hasNoData () {
                 return !this.list.length
+            }
+        },
+        methods: {
+            handleCityChange (city) {
+                this.$store.commit('changeCity', city)
+                this.$router.push('/')
             }
         },
         watch: {
@@ -91,7 +104,7 @@
         bottom 0
         background #eee
         .search-item
-            line-height .62rem
+            line-height .72rem
             padding-left .2rem
             color #666
             background #ffffff
